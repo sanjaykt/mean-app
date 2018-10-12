@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Output} from '@angular/core';
-import {PostModel} from '../post.model';
+import {Component} from '@angular/core';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-post-create',
@@ -7,17 +7,15 @@ import {PostModel} from '../post.model';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent {
-  @Output() emitPost: EventEmitter<PostModel> = new EventEmitter<PostModel>();
 
+  constructor(public postService: PostService) {
+
+  }
   onAddPost(form) {
-
     if (!form.valid) {
       return;
     }
-    const post: PostModel = {
-      title: form.value.title,
-      content: form.value.contenct,
-    };
-    this.emitPost.emit(post);
+
+    this.postService.addPost(form.value.title, form.value.content)
   }
 }
