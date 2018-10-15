@@ -6,9 +6,10 @@
          type="text"
          name="title"
          ngModel
-         #title="ngModel"
+         #postTitle="ngModel"
+         placeholder="post title"
          required>
-       <mat-error *ngIf="title.invalid">Please enter title</mat-error>
+       <mat-error *ngIf="postTitle.invalid">Please enter title</mat-error>
      </mat-form-field>
      <mat-form-field>
        <textarea
@@ -16,9 +17,10 @@
          rows="6"
          name="content"
          ngModel
-         #content="ngModel"
+         #postContent="ngModel"
+         placeholder="post content"
          required></textarea>
-       <mat-error *ngIf="content.invalid">Please enter content</mat-error>
+       <mat-error *ngIf="postContent.invalid">Please enter content</mat-error>
      </mat-form-field>
      <button
        type="submit"
