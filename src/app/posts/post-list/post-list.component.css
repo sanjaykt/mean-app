@@ -1,5 +1,11 @@
 :host {
   display: block;
-  margin-top: 1rem
-;
+  margin-top: 1rem;
+}
+
+.post-image {
+  width: 100%;
+}
+.post-image img {
+  width: 100%;
 }
